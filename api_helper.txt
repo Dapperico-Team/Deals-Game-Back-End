@@ -1,0 +1,38 @@
+
+POST http://localhost:8080/api/lottary/calculate
+body: {
+  "lottaryId": 1
+}
+** calculate winners & insert to DB after lottary ending
+
+
+GET http://localhost:8080/api/tickets/{lottaryId}
+** get all tickets of one lottary id
+
+GET http://localhost:8585/api/lottary/{lottaryId}
+** get data of an existing lottary
+
+POST http://localhost:8080/api/claim_reward
+body: {
+  "lottaryId": 1,
+  "userAddress": "0x92Fe76daFE5c2Bf902953329199738089611cD43"
+}
+** call Claim_Reward function
+
+GET http://localhost:8080/api/time
+** get existing time in milisecond if new open lottary exist
+
+GET http://localhost:8080/api/allLottaries
+** get all lottaries history
+
+GET http://localhost:8080/api/currentLottary
+** return current open lottary data
+
+POST http://localhost:8080/api/userTickets
+body: {
+  "userAddress": "user public key"
+}
+** return user tickets history.
+
+GET http://localhost:8080/api/lastWinners
+** get last 30 lottary id winners
